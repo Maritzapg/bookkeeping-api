@@ -17,182 +17,40 @@ This is a simple REST API to be called by a bot while executing tasks. It runs o
 
 # REST API
 
-## Process Invoice
+## Tasks
 
 ### Request
 
-`GET /tasks/processInvoice`
+`GET /tasks`
 
-    curl --location 'http://localhost:3001/tasks/processInvoice'
+    curl --location 'http://localhost:3001/tasks/'
+
+### Response
+
+```
+[
+    {
+        id: string;
+        description: string;
+        duration: number;
+    }
+]
+```
+
+## Task
+
+### Request
+
+`GET /tasks/:id`
+
+    curl --location 'http://localhost:3001/tasks/:id'
 
 ### Response
 
 ```
 {
-    result: string;
+    id: string;
+    description: string;
     duration: number;
-    id: number;
-}
-```
-
-## Categorize Transactions
-
-### Request
-
-`GET /tasks/categorizeTransactions`
-
-    curl --location 'http://localhost:3001/tasks/categorizeTransactions'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Extract Statement Data
-
-### Request
-
-`GET /tasks/extractStatementData`
-
-    curl --location 'http://localhost:3001/tasks/extractStatementData'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Amoritize Loan Payments
-
-### Request
-
-`GET /tasks/amoritizeLoanPayments`
-
-    curl --location 'http://localhost:3001/tasks/amoritizeLoanPayments'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Depreciate Fixed Assets
-
-### Request
-
-`GET /tasks/depreciateFixedAssets`
-
-    curl --location 'http://localhost:3001/tasks/depreciateFixedAssets'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Calculate Payroll Allocations
-
-### Request
-
-`GET /tasks/calculatePayrollAllocations`
-
-    curl --location 'http://localhost:3001/tasks/calculatePayrollAllocations'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Month End Report
-
-### Request
-
-`GET /tasks/monthEndReport`
-
-    curl --location 'http://localhost:3001/tasks/monthEndReport'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Audit Discrepancies
-
-### Request
-
-`GET /tasks/auditDscrepancies`
-
-    curl --location 'http://localhost:3001/tasks/auditDiscrepancies'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Close Books
-
-### Request
-
-`GET /tasks/closeBooks`
-
-    curl --location 'http://localhost:3001/tasks/closeBooks'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
-}
-```
-
-## Reconciliation
-
-### Request
-
-`GET /tasks/reconciliation`
-
-    curl --location 'http://localhost:3001/tasks/reconciliation'
-
-### Response
-
-```
-{
-    result: string;
-    duration: number;
-    id: number;
 }
 ```
