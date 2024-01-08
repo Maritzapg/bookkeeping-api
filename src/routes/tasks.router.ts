@@ -6,12 +6,6 @@ import { tasks } from '../utils/constants'
 export const router = express.Router()
 router.use(express.json())
 
-type result = {
-  result: string
-  duration: number
-  id: number
-}
-
 // GET
 /**
  * Retrieve list of tasks
