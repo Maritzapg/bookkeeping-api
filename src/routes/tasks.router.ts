@@ -36,13 +36,13 @@ router.get('/tasks', async (_req: Request, res: Response) => {
  */
 router.get('/tasks/:id', async (req: Request, res: Response) => {
   const taskId = req?.params?.id
-  const task = tasks.filter(t => t.id === taskId)
+  const task = tasks.find(t => t.id === taskId)
 
-  if (task) await setTimeout(task[0].duration)
+  if (task) await setTimeout(task.duration)
   else res.status(404).send(`Unable to complete process, task not found`)
 
   try {
-    res.status(200).send(tasks[0])
+    res.status(200).send(task)
   } catch (error) {
     res.status(500).send(`Unable to complete task due to error: ${error}`)
   }
