@@ -29,6 +29,7 @@ export const tasks = [
   {
     id: uuid(),
     description: 'Calculate payroll allocations',
+    duration: 37473,
   },
   {
     id: uuid(),
